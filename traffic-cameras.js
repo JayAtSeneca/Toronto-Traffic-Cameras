@@ -51,7 +51,7 @@ function Camera(data) {
   // Build a camera image URL based on the camera's location number, e.g.,
   // http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages/loc8001.jpg
   Camera.prototype.getImageUrl = function() {
-    let baseUrl = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages';
+    let baseUrl = '//opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages';
     let cameraNumber = this.number;
     return `${baseUrl}/loc${cameraNumber}.jpg`;
   };
@@ -69,7 +69,7 @@ function Camera(data) {
     let directionData = [];
     let directions = this.directions;
     let number = this.number;
-    let baseUrl = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages';
+    let baseUrl = '//opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages';
   
     // Loop through all d1, d2, etc direction keys and create data Objects
     ['d1', 'd2', 'd3', 'd4'].forEach(function(key) {
