@@ -32,8 +32,30 @@ function updateImages(camera){
     let cameraImage = document.querySelector('#camera-image');
 
     cameraImage.src = camera.getImageUrl();
-
     imagesDiv.classList.remove('hidden');
+
+    let directionsDiv = document.querySelector('#directions');
+    directionsDiv.innerHTML = '';
+    let directionsData = camera.getDirectionImages();
+
+    directionsData.forEach((data) => {
+        let div = document.createElement('div');
+        div.className = 'direction-camera';
+
+        let img = document.createElement('img');
+        img.src = data.url;
+
+        let span = document.createElement('span');
+        span.innerText = data.direction.toUpperCase();
+        span.style.color = 'black';
+        // putting the image and span in to the direction div
+
+        div.appendChild(img);
+        div.appendChild(span);
+
+
+        directionsDiv.appendChild(div);
+    });
 
 }
 
@@ -54,7 +76,7 @@ function updateMap(lat, lng) {
 
 function buildMap(){
     let senecaCoords = [43.7952, -79.3497];
-    map = L.map('map').setView(senecaCoords, 16);
+    map = L.map('map').setView(senecaCoords, 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
