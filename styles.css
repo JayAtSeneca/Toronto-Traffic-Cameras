@@ -20,11 +20,29 @@ body{
     flex: 9;
     display: flex;
     overflow-y: auto;
+    margin: 1px;
 }
 
 nav{
     flex: 1;
     overflow-y: auto;
+    background-color: #003454;
+    color: white;
+}
+
+.menu-item{
+    background-color: #0b3954;
+    color: #b5bec6;
+    cursor: pointer;
+    padding: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-left: 3px solid transparent;
+}
+.menu-item:hover{
+    color: #C7DBE6;
+    border-left: 3px solid #bfb1c1;
 }
 
 /* nav::-webkit-scrollbar{
@@ -33,4 +51,21 @@ nav{
 
 main{
     flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#images{
+    flex: 1;
+    background-color: #A6CC8B;
+    color: #686850;
+}
+
+#map{
+    flex: 3;
+    height: 100%;
+}
+
+.hidden{
+    display: none !important;
 }
